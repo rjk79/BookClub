@@ -6,6 +6,9 @@
     <input type="submit" value="Search by Title">
 </form>     
 
+<a href="<%= new_book_url %>">Upload New Book</a> <br>  
+<a href="/users/favorites">View Favorite Books</a>
+
 <ul>
 <% @books.each {|book| %>
     <li>
