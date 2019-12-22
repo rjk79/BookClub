@@ -1,0 +1,21 @@
+<h1>All Books</h1>
+<ul>
+<% @books.each {|book| %>
+    <li>
+        Title: <%= book.title %>  <br>
+        Author: <%= book.author %> <br>
+        Text: <%= book.text %> <br>
+
+        <form action="<%= favorites_url %>" method="post">
+            <input type="hidden" name="favorite[book]" value="<%=book.id%>" id="">
+            <input type="hidden" name="authenticity_token" value="form_authenticity_token">
+            <input type="submit" value="Favorite">
+        </form>     
+        <a href="<%= book_url(book) %>">View Book </a>
+        <br><br><br>    
+    </li>
+<% } %>
+</ul>
+
+<a href="<%= new_book_url %>">Upload New Book</a> <br>  
+<a href="/users/favorites">Favorite Books</a>
