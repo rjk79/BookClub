@@ -12,7 +12,7 @@ class NotesController < ApplicationController
         @note = current_user.notes.find(params[:id])
         if @note.update(note_params)
             @note.book_id
-            render :edit
+            redirect_to book_url(@note.book_id)
         else
             flash.now[:errors] = @note.errors.full_messages
             render :edit

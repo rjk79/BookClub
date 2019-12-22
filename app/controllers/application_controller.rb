@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery prepend: true
-#   , with: :exception
+  protect_from_forgery with: :exception
 
-  #CHELL 11231
   helper_method :logged_in?, :current_user
 
   def current_user
@@ -27,6 +25,5 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !!current_user
   end
-
 
 end
