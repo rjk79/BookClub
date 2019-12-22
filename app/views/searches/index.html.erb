@@ -1,11 +1,4 @@
-<h1>All Books</h1>
-
-<form action="<%= searches_url %>" method="get">
-    <input type="text" name="search[query]" value="" id="">
-    <input type="hidden" name="authenticity_token" value="form_authenticity_token">
-    <input type="submit" value="Search by Title">
-</form>     
-
+<h1>Search Results</h1>
 <ul>
 <% @books.each {|book| %>
     <li>

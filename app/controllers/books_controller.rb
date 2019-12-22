@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
+
     def new
         @book = Book.new
-
     end
 
     def show
@@ -16,6 +16,7 @@ class BooksController < ApplicationController
     def create
         @book = Book.new(book_params) 
         if @book.save
+            @notes = Note.where(user_id: current_user.id, book_id: @book.id)
             render :show
         else
             flash.now[:errors] = @book.errors.full_messages
