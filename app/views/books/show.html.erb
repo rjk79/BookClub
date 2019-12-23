@@ -25,6 +25,6 @@ Genre: <%= @book.genre %> <br>
   <label for="body"></label>
   <input type="text" name="note[body]" value="" id="body">
   <input type="hidden" name="note[book]" value="<%=@book.id%>" id="">
-  <input type="hidden" name="authenticity_token" value="form_authenticity_token">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <input type="submit" value="Create New Note">
 </form>
