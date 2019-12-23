@@ -1,6 +1,8 @@
 # BookClub
+Built purely on Rails.
 
-- User Auth
-- Can add books
-- Can add/edit/delete notes about books
-- Can favorite books
+- Sign up/Sign in
+- Upload books
+- Add/edit/delete notes about books
+- Favorite books
+- Search for books

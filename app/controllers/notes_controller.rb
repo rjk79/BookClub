@@ -11,7 +11,6 @@ class NotesController < ApplicationController
     def update
         @note = current_user.notes.find(params[:id])
         if @note.update(note_params)
-            @note.book_id
             redirect_to book_url(@note.book_id)
         else
             flash.now[:errors] = @note.errors.full_messages
