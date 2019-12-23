@@ -12,6 +12,16 @@ class User < ApplicationRecord
 
     has_many :notes
 
+    has_many :friendships1,
+        foreign_key: :user1_id,
+        class_name: :Friendship,
+        dependent: :destroy
+
+    has_many :friendships2,
+        foreign_key: :user2_id,
+        class_name: :Friendship,
+        dependent: :destroy
+
     #FG PER 3 1 2 1 3
 
     def self.find_by_credentials(username, password)

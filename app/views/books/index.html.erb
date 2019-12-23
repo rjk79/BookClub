@@ -14,6 +14,7 @@
     <li>
         Title: <%= book.title %>  <br>
         Author: <%= book.author %> <br>
+        Genre: <%= book.genre %> <br>
 
         <form action="<%= favorites_url %>" method="post">
             <input type="hidden" name="favorite[book]" value="<%=book.id%>" id="">

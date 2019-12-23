@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+    before_action :ensure_logged_in
 
     def new
         @book = Book.new
@@ -25,6 +26,6 @@ class BooksController < ApplicationController
     end
 
     def book_params
-        return params.require(:book).permit(:title, :author, :genre, :text)
+        return params.require(:book).permit(:title, :author, :genre)
     end
 end
