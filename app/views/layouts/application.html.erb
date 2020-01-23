@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BookClub</title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -19,15 +26,16 @@
       <form action="<%= session_url %>" method="post">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
         <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Sign Out">
+        <input class="flex" type="submit" value="Sign Out">
       </form>
     <% else %>
-      <a href="<%= new_session_url %>">Log In</a>
-      <a href="<%= new_user_url %>">Register</a>
+      <a class="flex" href="<%= new_session_url %>">Log In</a>
+      <a class="flex" href="<%= new_user_url %>">Register</a>
     <% end %>
     <%= flash[:errors] if flash[:errors] %>
-    <a href="<%= books_url %>">Home Page</a>
-
+    <a class="flex" href="<%= books_url %>">Home Page</a>
+    <div class="container-fluid">
     <%= yield %>
+    </div>
   </body>
 </html>

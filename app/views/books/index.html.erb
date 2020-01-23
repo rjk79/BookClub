@@ -1,28 +1,34 @@
-<h1>All Books</h1>
 
-<form action="<%= searches_url %>" method="get">
-    <input type="text" name="search[query]" value="" id="">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <input type="submit" value="Search by Title">
-</form>     
-
-<a href="<%= new_book_url %>">Upload New Book</a> <br>  
-<a href="/users/favorites">View Favorite Books</a>
-
-<ul>
-<% @books.each {|book| %>
-    <li>
-        Title: <%= book.title %>  <br>
-        Author: <%= book.author %> <br>
-        Genre: <%= book.genre %> <br>
-
-        <form action="<%= favorites_url %>" method="post">
-            <input type="hidden" name="favorite[book]" value="<%=book.id%>" id="">
+<div class="row">
+    <div class="col-md-4">
+        <h2>Search</h2>
+        <form action="<%= searches_url %>" method="get">
+            <input type="text" name="search[query]" value="" id="">
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-            <input type="submit" value="Favorite">
+            <input class="flex" type="submit" value="Search by Title">
         </form>     
-        <a href="<%= book_url(book) %>">View Book </a>
-        <br><br><br>    
-    </li>
-<% } %>
-</ul>
+
+        <a class="flex" href="<%= new_book_url %>">Add New Book</a> <br>  
+        <a class="flex" href="/users/favorites">View Favorite Books</a>
+    </div>
+
+    <ul class="col-md-8">
+    <h1>All Books</h1>
+
+    <% @books.each {|book| %>
+        <li>
+            Title: <%= book.title %>  <br>
+            Author: <%= book.author %> <br>
+            Genre: <%= book.genre %> <br>
+
+            <form action="<%= favorites_url %>" method="post">
+                <input type="hidden" name="favorite[book]" value="<%=book.id%>" id="">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <input type="submit" value="Favorite">
+            </form>     
+            <a class="flex" href="<%= book_url(book) %>">View Book </a>
+            <br><br><br>    
+        </li>
+    <% } %>
+    </ul>
+</div>

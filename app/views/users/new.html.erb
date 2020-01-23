@@ -1,10 +1,14 @@
+<div class="flex">
+
 <h1>Sign Up</h1>
 
-<form action="<%= users_url %>" method="post">
+<form class="flex" action="<%= users_url %>" method="post">
   <label for="username">Username</label>
   <input type="text" name="user[username]" value="" id="username">
   <label for="password">Password</label>
   <input type="password" name="user[password]" value="" id="password">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="submit" value="Register">
+  <input class="signup-button" type="submit" value="Register">
 </form>
+
+</div>
