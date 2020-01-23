@@ -1,5 +1,5 @@
 # BookClub
-Built on Rails and Postgresql.
+Built on Rails, Postgresql, and Bootstrap.
 ### Features:
 - Sign up/Sign in
 - Upload books
