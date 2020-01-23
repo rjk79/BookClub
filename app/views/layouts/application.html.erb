@@ -3,7 +3,9 @@
   <head>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
@@ -18,7 +20,10 @@
   </head>
 
   <body>
-    <h2>Book Club</h1>
+    <div class="logo">
+      <h2>Book Club</h1>&nbsp;&nbsp;
+      <i class="fas fa-book-reader"></i>
+    </div>
     <% if logged_in? %>
       Current User:
       <%= current_user.username %>
