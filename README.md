@@ -7,6 +7,6 @@ Built on Rails, Postgresql, and Bootstrap.
 - Add/edit/delete notes about books
 - Favorite books to view together
 - Search for books
-- Mobile-responsive format
+- Mobile-responsive design
 
 [Live Site](http://book-club-rjk.herokuapp.com/)
