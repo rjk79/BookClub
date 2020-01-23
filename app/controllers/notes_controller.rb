@@ -2,6 +2,7 @@ class NotesController < ApplicationController
     def edit
         @note = current_user.notes.find(params[:id])
         if @note.nil? 
+            # values avail in next req
             flash[:errors] = @note.errors.full_messages
             redirect_to book_url(@note.book_id)
         else
@@ -13,6 +14,7 @@ class NotesController < ApplicationController
         if @note.update(note_params)
             redirect_to book_url(@note.book_id)
         else
+            # makes values avail in same req
             flash.now[:errors] = @note.errors.full_messages
             render :edit
         end

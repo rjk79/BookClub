@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
             login(user)
             redirect_to books_url
         else
-            flash.now[:errors] = ['Invalid usern/passw']
+            flash.now[:errors] = ['Invalid username/password']
             render :new
         end
     end

@@ -26,6 +26,7 @@ class BooksController < ApplicationController
     end
 
     def book_params
+        # whitelisting
         return params.require(:book).permit(:title, :author, :genre)
     end
 end
