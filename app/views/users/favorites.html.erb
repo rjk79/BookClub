@@ -2,7 +2,12 @@
 <ul>
 <% current_user.favorite_books.each{|favorite| %>
     <li>
-        <%= favorite.title %>
+        <b>Title:</b> <%= favorite.title %>  <br>
+        <b>Author:</b> <%= favorite.author %> <br>
+        <b>Genre:</b> <%= favorite.genre %> <br>
+
+        <a class="flex" href="<%= book_url(favorite) %>">View Book </a>
+        <br><br><br>    
     </li>
 <% } %>
 

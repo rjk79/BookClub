@@ -25,7 +25,7 @@
       <i class="fas fa-book-reader"></i>
     </div>
     <% if logged_in? %>
-      Current User:
+      <b>Current User:</b>
       <%= current_user.username %>
 
       <form action="<%= session_url %>" method="post">

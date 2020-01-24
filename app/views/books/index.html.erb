@@ -3,9 +3,9 @@
     <div class="col-md-4">
         <h2>Search</h2>
         <form action="<%= searches_url %>" method="get">
-            <input type="text" name="search[query]" value="" id="">
+            <input type="text" name="search[query]" value="" id="" placeholder="Title">
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-            <input class="flex" type="submit" value="Search by Title">
+            <input class="flex" type="submit" value="Search">
         </form>     
 
         <a class="flex" href="<%= new_book_url %>">Add New Book</a> <br>  
@@ -17,9 +17,9 @@
 
     <% @books.each {|book| %>
         <li>
-            Title: <%= book.title %>  <br>
-            Author: <%= book.author %> <br>
-            Genre: <%= book.genre %> <br>
+            <b>Title:</b> <%= book.title %>  <br>
+            <b>Author:</b> <%= book.author %> <br>
+            <b>Genre:</b> <%= book.genre %> <br>
 
             <form action="<%= favorites_url %>" method="post">
                 <input type="hidden" name="favorite[book]" value="<%=book.id%>" id="">
