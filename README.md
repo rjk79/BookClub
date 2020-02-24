@@ -1,6 +1,8 @@
 # BookClub
 Built on Rails, Postgresql, and Bootstrap.
 
+![gif](app/assets/bookclub.gif)
+
 ### Features:
 - Sign up/Sign in
 - Add books
